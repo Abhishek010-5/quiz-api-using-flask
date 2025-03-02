@@ -1,5 +1,5 @@
 Quiz API
-This is a Flask-based API designed to serve collections of questions on various topics, including Current Affairs, Reasoning, Aptitude, and other specific subjects. The API retrieves data from a MongoDB database and includes rate-limiting to manage usage. It is built with security in mind, requiring an API key for access.
+This Flask-based API serves collections of questions on various topics, such as Current Affairs, Reasoning, Aptitude, and other specific subjects. The API retrieves data from a MongoDB database and includes rate-limiting to manage usage. It is built with security in mind, requiring an API key for access.
 
 Features
 Retrieve questions by collection name and topic.
@@ -21,48 +21,31 @@ A .env file with environment variables (see Configuration)
 
 Installation
 Clone the Repository
-
 bash
 git clone <repository-url>
 cd <repository-folder>
 Set Up a Virtual Environment
-
 bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
 Install Dependencies
-
 bash
 pip install -r requirements.txt
-Ensure requirements.txt includes:
-
-flask
-pymongo
-flask-limiter
-python-dotenv
-Configure Environment Variables Create a .env file in the root directory with the following:
+Configure Environment Variables
+Create a .env file in the root directory with the following:
 
 API_KEY=your_api_key_here
 URI=your_mongodb_connection_string
 DB=your_database_name
 SECRET_KEY=your_flask_secret_key
-API_KEY: A secure key for API authentication.
-
-URI: MongoDB connection string (e.g., mongodb://localhost:27017/ or a MongoDB Atlas URI).
-
-DB: Name of the MongoDB database.
-
-SECRET_KEY: Secret key for Flask app security.
-
+Usage
 Run the Application
-
 bash
-python app.py
+python api/app.py
 The API will be available at http://127.0.0.1:5000/.
 
 API Endpoints
 Home
-
 URL: /
 
 Method: GET
@@ -76,7 +59,6 @@ json
   "message": "This is home page"
 }
 Get Questions
-
 URL: /get_questions/<collection_name>/<topic>
 
 Method: GET
@@ -159,16 +141,4 @@ bash
 git push origin feature/new-feature
 Create a Pull Request.
 
-Project Structure
-quiz-api/
-├── api/
-│   ├── app.py              # Main Flask application file; initializes app and limiter
-│   ├── routes.py           # Defines API endpoints (e.g., home, get_questions)
-│   ├── database.py         # MongoDB connection logic
-│   ├── config.py           # Configuration file for environment variables 
-│   └── .env                # Environment variables (API_KEY, DB_URI, etc.) - not tracked in git
-│   └── .gitignore          # Specifies files to ignore in git (e.g., .env, venv/)
-├── sample_key.txt          # Sample file for environment variable format (rename to .env)
-├── vercel.json             # Vercel configuration file for deployment
-├── README.md               # Project documentation
-└── requirements.txt        # List of Python dependencies
+Feel free to make any further modifications. If you need additional assistance, let me know!
