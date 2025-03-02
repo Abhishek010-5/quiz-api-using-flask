@@ -1,23 +1,33 @@
-Quiz API
-This Flask-based API serves collections of questions on various topics, such as Current Affairs, Reasoning, Aptitude, and other specific subjects. The API retrieves data from a MongoDB database and includes rate-limiting to manage usage. It is built with security in mind, requiring an API key for access.
+# Quiz API
+This **Flask-based API** serves collections of questions on various topics, such as **Current Affairs**, **Reasoning**, **Aptitude**, and other specific subjects. The API retrieves data from a **MongoDB database** and includes rate-limiting to manage usage. It is built with security in mind, requiring an API key for access.
 
-Features
-Retrieve questions by collection name and topic.
+## Features
+- **Retrieve questions by collection name and topic.**
+- **Supports multiple collections (e.g., "current_affairs", "reasoning", "aptitude").**
+- **Rate-limited to 50 requests per hour per IP address (configurable).**
+- **Secure access with API key authentication.**
+- **Error handling for invalid requests, missing data, or database issues.**
 
-Supports multiple collections (e.g., "current_affairs", "reasoning", "aptitude").
+## Technologies Used
+- **Flask**
+- **MongoDB**
+- **Custom utilities and config**
 
-Rate-limited to 50 requests per hour per IP address (configurable).
+## Directory Structure
+```plaintext
+quiz-api/
+├── api/
+│   ├── app.py              
+│   ├── routes.py          
+│   ├── database.py        
+│   ├── config.py          
+│   └── .env              
+│   └── .gitignore        
+├── sample_ket.txt        
+├── vercel.json          
+├── README.md           
+└── requirements.txt    
 
-Secure access with API key authentication.
-
-Error handling for invalid requests, missing data, or database issues.
-
-Prerequisites
-Python 3.8+
-
-MongoDB (local or cloud instance like MongoDB Atlas)
-
-A .env file with environment variables (see Configuration)
 
 Installation
 Clone the Repository
@@ -142,3 +152,6 @@ git push origin feature/new-feature
 Create a Pull Request.
 
 Feel free to make any further modifications. If you need additional assistance, let me know!
+
+Acknowledgments
+Thanks to the open-source community for providing valuable resources and libraries.
